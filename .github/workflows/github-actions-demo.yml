@@ -60,4 +60,4 @@ jobs:
           docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO_NAME }}:latest
           docker stop ${{ secrets.CONTAINER_NAME }} || true
           docker rm ${{ secrets.CONTAINER_NAME }} || true
-          docker run -d --name ${{ secrets.CONTAINER_NAME }} -p ${{ secrets.SERVER_PORT }}:8080${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO_NAME }}:latest
+          docker run -d --name ${{ secrets.CONTAINER_NAME }} -p ${{ secrets.SERVER_PORT }}:8080 ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO_NAME }}:latest
