@@ -20,6 +20,10 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
+    - name: Create application.properties file
+      run: |
+        echo "${{ secrets.APPLICATION }}" >> src/main/resources/application.properties
+
     - name: Cache Gradle packages
       uses: actions/cache@v2
       with:
