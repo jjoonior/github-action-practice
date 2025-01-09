@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicdtest
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cicdtest
+  template:
+    metadata:
+      labels:
+        app: cicdtest
+    spec:
+      containers:
+      - name: cicdtest
+        image: public.ecr.aws/x6i0y2m2/musn/musn-public:latest
+        ports:
+        - containerPort: 8080
